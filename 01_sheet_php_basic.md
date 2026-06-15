@@ -24,7 +24,7 @@ PHP ทำงานฝั่ง **เซิร์ฟเวอร์ (Backend)** 
 
 > ทำไมเน้น POST: ค่าที่ส่งไม่โผล่ใน URL (ปลอดภัยกว่า) และเหมาะกับการ "เปลี่ยนแปลงข้อมูล" ในฐานข้อมูล ส่วน GET ใช้ตอนแค่ "อ่าน" หรือเปิดลิงก์
 
-รับค่าที่ส่งมาแบบ **POST** (ใช้บ่อยสุด):
+รับค่าที่ส่งมาแบบ **POST** :
 ```php
 <?php
 // ฟอร์มที่ตั้ง method="POST" จะส่งค่ามาที่ $_POST
@@ -34,7 +34,7 @@ $price = $_POST['price'] ?? 0;
 ?>
 ```
 
-และรับค่าแบบ **GET** (ตอนอ่าน/ส่ง id):
+และรับค่าแบบ **GET** :
 ```php
 <?php
 $id = $_GET['id'] ?? null;   // เช่นเปิด list.php?id=3
@@ -83,6 +83,8 @@ echo $person["name"];  // สมชาย
 ?>
 ```
 
+<div class="page-break"></div>
+
 ### 2.3 เงื่อนไข if
 ```php
 <?php
@@ -124,6 +126,7 @@ function บวก($a, $b) {
 echo บวก(3, 5);   // 8
 ?>
 ```
+<div class="page-break"></div>
 
 ### 2.6 แทรก PHP ใน HTML
 ```php
@@ -161,8 +164,8 @@ echo บวก(3, 5);   // 8
 ```php
 <?php
 $host = 'localhost';
-$user = 'root';
-$pass = '';                 // XAMPP รหัส root เป็นค่าว่าง
+$user = 'dba01';            // user แอดมินที่ grant สิทธิ์ไว้ใน Day 1
+$pass = '202606';           // รหัสผ่านของ dba01
 $dbname = 'atsoft_day2';
 
 $conn = mysqli_connect($host, $user, $pass, $dbname);
@@ -171,6 +174,7 @@ if (!$conn) {
 }
 mysqli_set_charset($conn, 'utf8mb4');  // รองรับภาษาไทย
 ```
+<div class="page-break"></div>
 
 ### 3.3 อ่านข้อมูล (SELECT) แล้วแสดงผล
 สร้างไฟล์ `list.php`:
@@ -239,6 +243,8 @@ HTML ฟอร์มส่งข้อมูลมาให้ PHP ผ่าน 
 - `$_GET` — ค่ามากับ URL (เช่น `?id=5`) เหมาะกับการค้นหา/ลิงก์
 - `$_POST` — ค่ามากับการ submit ฟอร์ม เหมาะกับการเพิ่ม/แก้ข้อมูล
 
+**แบบ POST** — ค่าจะถูกส่งแนบไปกับ body ของ request (ไม่โชว์ใน URL) เหมาะกับการเพิ่ม/แก้/ลบข้อมูล หรือข้อมูลอ่อนไหวเช่นรหัสผ่าน
+
 ```html
 <!-- ฟอร์ม -->
 <form method="POST" action="save.php">
@@ -255,9 +261,30 @@ echo "ได้รับชื่อ: " . $name;
 ?>
 ```
 
-> รับค่าจาก URL `list.php?id=3` ด้วย `$_GET['id']`
+**แบบ GET** — ค่าจะติดไปกับ URL ให้เห็น (เช่น `search.php?keyword=ปากกา`) เหมาะกับการค้นหา/ลิงก์ที่อยากบุ๊กมาร์กหรือส่งต่อได้
+
+```html
+<!-- ฟอร์มค้นหา (method="GET") -->
+<form method="GET" action="search.php">
+    ค้นหา: <input type="text" name="keyword">
+    <button type="submit">ค้นหา</button>
+</form>
+```
+
+```php
+<!-- search.php -->
+<?php
+$keyword = $_GET['keyword'] ?? '';   // รับค่าจาก URL (?keyword=...) ; ?? '' กันค่าไม่มี
+echo "กำลังค้นหา: " . $keyword;
+?>
+```
+
+> นอกจากฟอร์มแล้ว GET ยังรับค่าจากลิงก์ตรงๆ ได้ เช่นเปิด `list.php?id=3` แล้วอ่านด้วย `$_GET['id']`
+>
+> **เลือกใช้ตัวไหน?** อ่าน/ค้นหา/ลิงก์ → `GET` (ค่าโชว์ใน URL บุ๊กมาร์กได้) · เพิ่ม/แก้/ลบ หรือข้อมูลอ่อนไหวเช่นรหัสผ่าน → `POST` (ไม่โชว์ใน URL)
 
 ---
+<div class="page-break"></div>
 
 ## 5. สรุป
 - PHP รันฝั่งเซิร์ฟเวอร์ สร้าง HTML ส่งให้เบราว์เซอร์

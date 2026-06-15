@@ -86,6 +86,4 @@ fetch('http://localhost/atsoft/api/record_api.php?id=<id>', { method: 'DELETE' }
 - [ ] เข้าใจการแยกงานตาม HTTP method
 - [ ] รับ-ส่งข้อมูลเป็น JSON ได้
 - [ ] ต่อยอดเพิ่ม endpoint ค้นหา/สรุปได้
-
-เฉลย: [เฉลย Lab 4](./answers/04_lab_api_answer.md)
 ไปต่อ: [05_sheet_login.md](./05_sheet_login.md)
