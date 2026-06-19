@@ -1,4 +1,4 @@
-# Lab 4 · สร้าง Record API
+# Lab 5 · สร้าง Record API
 
 ## เป้าหมาย
 สร้างและทดสอบ API ที่จัดการข้อมูลสินค้าครบ CRUD ผ่าน HTTP method
@@ -86,4 +86,4 @@ fetch('http://localhost/atsoft/api/record_api.php?id=<id>', { method: 'DELETE' }
 - [ ] เข้าใจการแยกงานตาม HTTP method
 - [ ] รับ-ส่งข้อมูลเป็น JSON ได้
 - [ ] ต่อยอดเพิ่ม endpoint ค้นหา/สรุปได้
-ไปต่อ: [05_sheet_login.md](./05_sheet_login.md)
+ไปต่อ: [07_sheet_login.md](./07_sheet_login.md)

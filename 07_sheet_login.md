@@ -1,4 +1,4 @@
-# ชีท 05 · ระบบ Login + Session
+# ชีท 07 · ระบบ Login + Session
 
 ## จุดประสงค์
 ทำระบบสมัครสมาชิก + เข้าสู่ระบบ + จำสถานะผู้ใช้ (Session) + ป้องกันหน้าที่ต้องล็อกอิน
@@ -205,4 +205,4 @@ if ($user['password'] === $inputHashed) {
 - เริ่มจากเวอร์ชันเข้าใจง่ายก่อน แล้วยกระดับด้วย **prepared statement** (กัน SQL Injection) และ **hash** (กันรหัสรั่ว)
 - งานจริงใช้ `password_hash()` / `password_verify()`
 
-ไปต่อ: [06_lab_login.md](./06_lab_login.md)
+ไปต่อ: [08_lab_login.md](./08_lab_login.md)

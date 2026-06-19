@@ -12,6 +12,7 @@
 - เขียน PHP พื้นฐาน (ตัวแปร, array, if, loop, function)
 - เชื่อม PHP เข้ากับ MySQL ด้วย **mysqli** และแสดงข้อมูลออกหน้าเว็บ
 - ทำหน้าเว็บ **CRUD** ครบ (แสดง/เพิ่ม/แก้/ลบ)
+- สั่ง **Transaction** (COMMIT/ROLLBACK) ผ่าน PHP ให้หลายคำสั่งสำเร็จคู่กัน
 - สร้าง **API** ที่คืนข้อมูลเป็น **JSON**
 - ทำระบบ **Login + Session** และรู้วิธียกระดับความปลอดภัย (prepared statement + hash)
 
@@ -32,10 +33,12 @@
 | :-- | :-- | :-- | :-- |
 | 1 | [01_sheet_php_basic.md](./01_sheet_php_basic.md) | ชีท | PHP พื้นฐาน + เชื่อม DB ด้วย mysqli |
 | 2 | [02_lab_php_crud.md](./02_lab_php_crud.md) | Lab 3 | ทำหน้าเว็บ CRUD |
-| 3 | [03_sheet_api.md](./03_sheet_api.md) | ชีท | สร้าง API คืน JSON |
-| 4 | [04_lab_api.md](./04_lab_api.md) | Lab 4 | ทำ Record API |
-| 5 | [05_sheet_login.md](./05_sheet_login.md) | ชีท | Session + Login (+ hash แบบ optional) |
-| 6 | [06_lab_login.md](./06_lab_login.md) | Lab 5 | ทำระบบ Register/Login |
+| 3 | [03_sheet_transaction.md](./03_sheet_transaction.md) | ชีท | Transaction (COMMIT/ROLLBACK) ใน PHP |
+| 4 | [04_lab_transaction.md](./04_lab_transaction.md) | Lab 4 | ฝึก Transaction: โอนเงิน + ขายของ |
+| 5 | [05_sheet_api.md](./05_sheet_api.md) | ชีท | สร้าง API คืน JSON |
+| 6 | [06_lab_api.md](./06_lab_api.md) | Lab 5 | ทำ Record API |
+| 7 | [07_sheet_login.md](./07_sheet_login.md) | ชีท | Session + Login (+ hash แบบ optional) |
+| 8 | [08_lab_login.md](./08_lab_login.md) | Lab 6 | ทำระบบ Register/Login |
 
  ไฟล์ประกอบ:
 - [`src/`](./src/) — โค้ดตัวอย่าง/เริ่มต้น (db.php, setup.sql, crud/, api/, auth/)

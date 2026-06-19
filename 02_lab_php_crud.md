@@ -72,4 +72,4 @@
 - [ ] ดัดแปลงการแสดงผลใน index.php ได้
 - [ ] เพิ่มการตรวจสอบข้อมูลก่อนบันทึกได้
 - [ ] เขียนหน้าสรุป (report) ด้วย Aggregate ได้
-ไปต่อ: [03_sheet_api.md](./03_sheet_api.md)
+ไปต่อ: [03_sheet_transaction.md](./03_sheet_transaction.md)
